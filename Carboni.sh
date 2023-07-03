@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 gcc -o filosofi Carboni.c
 echo "INSERIRE IL NUMERO DI FILOSOFI:   "
 read filosofi
