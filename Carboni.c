@@ -373,7 +373,7 @@ int main(int argc, char *argv[]) {
 
 
   printf("\n\n\n Il Ristorante è aperto! Aspettando i filosofi...\n\n");
-  sleep(3);
+  sleep(5);
 
 //STAMPE A VIDEO NEL CASO DI FLAG NULLI O NEGATIVI.
   if(n_filosofi<=1 || argv[1]==NULL) { //numero negativo/nullo/0 del numero di filosofi --> errore
@@ -415,7 +415,7 @@ int main(int argc, char *argv[]) {
 //CREAZIONE DEI SEMAFORI (FORCHETTE).
   for(int i = 1; i <= n_filosofi; i++){ //ciclo per creare tanti semafori (forchette) quanti sono i filosofi a tavola
     snprintf(str, sizeof(str), "%d", i); //assegna "un nome" alla forchetta
-    if((forchetta[i] = sem_open(str, O_CREAT, 1)) == SEM_FAILED){ //se il semaforo non viene creato correttamente il programma si chiude
+    if((forchetta[i] = sem_open(str, O_CREAT, S_IRWXU, 1)) == SEM_FAILED){ //se il semaforo non viene creato correttamente il programma si chiude
       perror(BLU"\n\n[CONSOLE MESSAGE]"RESET": Manca una forchetta a tavola!\n");
       exit(EXIT_FAILURE); //uscita con fallimento
     }
