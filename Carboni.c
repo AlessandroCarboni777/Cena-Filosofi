@@ -373,7 +373,7 @@ int main(int argc, char *argv[]) {
 
 
   printf("\n\n\n Il Ristorante è aperto! Aspettando i filosofi...\n\n");
-  sleep(5);
+  sleep(3);
 
 //STAMPE A VIDEO NEL CASO DI FLAG NULLI O NEGATIVI.
   if(n_filosofi<=1 || argv[1]==NULL) { //numero negativo/nullo/0 del numero di filosofi --> errore
