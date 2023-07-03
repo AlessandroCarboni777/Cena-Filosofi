@@ -326,7 +326,7 @@ int main(int argc, char *argv[]) {
   } else if(argc<=2) { //Un solo argomento passato.
     printf(MAGENTA"\n\n[WARNING]"RESET": è stato inserito solo il numero di filosofi!");
     n_filosofi = atoi(argv[1]); //il numero di filosofi è il numero passato come argomento dopo "./nome_file"
-    if(n_filosofi<=0) { //caso in cui l'input sia errato (<=0)
+    if(n_filosofi<=1) { //caso in cui l'input sia errato (<=0)
       printf(RED"\n\n[FATAL ERROR]"RESET": il numero di filosofi inseriti non è corretto!");
       exit(-1); //esce con il code -1
     }
@@ -335,7 +335,7 @@ int main(int argc, char *argv[]) {
     printf(MAGENTA"\n\n[WARNING]"RESET": sono stati inseriti solo il numero di partecipanti ed il flag dello stallo!");
     n_filosofi = atoi(argv[1]); //il numero di filosofi è il numero passato come argomento dopo "./nome_file"
     flag_stallo = atoi(argv[2]); //il flag di stallo è il secondo numero passato come argomento
-    if(n_filosofi<=0) {
+    if(n_filosofi<=1) {
       printf(RED"\n\n[FATAL ERROR]"RESET": il numero di filosofi inseriti non è corretto!");
       exit(-1);
     }
@@ -345,7 +345,7 @@ int main(int argc, char *argv[]) {
     n_filosofi = atoi(argv[1]); //il numero di filosofi è il numero passato come argomento dopo "./nome_file"
     flag_stallo = atoi(argv[2]); //il flag di stallo è il secondo numero passato come argomento
     flag_soluzione_stallo = atoi(argv[3]); //il flag di soluzione allo stallo è il terzo numero passato come argomento
-    if(n_filosofi<=0) {
+    if(n_filosofi<=1) {
       printf(RED"\n\n[FATAL ERROR]"RESET": il numero di filosofi inseriti non è corretto!");
       exit(-1);
     }
@@ -355,7 +355,7 @@ int main(int argc, char *argv[]) {
     flag_stallo = atoi(argv[2]); //il flag di stallo è il secondo numero passato come argomento
     flag_soluzione_stallo = atoi(argv[3]); //il flag di soluzione allo stallo è il terzo numero passato come argomento
     flag_starvation = atoi(argv[4]); //il flag di starvation è il quarto numero passato come argomento
-    if(n_filosofi<=0) {
+    if(n_filosofi<=1) {
       printf(RED"\n\n[FATAL ERROR]"RESET": il numero di filosofi inseriti non è corretto!");
       exit(-1);
     }
@@ -366,7 +366,7 @@ int main(int argc, char *argv[]) {
     flag_stallo = atoi(argv[2]);
     flag_soluzione_stallo = atoi(argv[3]);
     flag_starvation = atoi(argv[4]);
-    if(n_filosofi<=0) {
+    if(n_filosofi<=1) {
       printf(RED"\n\n[FATAL ERROR]"RESET": il numero di filosofi inseriti non è corretto!");
       exit(-1);
     }
@@ -378,7 +378,7 @@ int main(int argc, char *argv[]) {
   sleep(5);
 
 //STAMPE A VIDEO NEL CASO DI FLAG NULLI O NEGATIVI.
-  if(n_filosofi<=0 || argv[1]==NULL) { //numero negativo/nullo/0 del numero di filosofi --> errore
+  if(n_filosofi<=1 || argv[1]==NULL) { //numero negativo/nullo/0 del numero di filosofi --> errore
     printf(RED"[FATAL ERROR]"RESET": numero di filosofi non corretto! chiusura in corso...");
     exit(0);
   }
