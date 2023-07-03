@@ -56,7 +56,7 @@ void f_handler(int iSignalcode) { //funzione per gestire CTRL+C
 
 void mangia_solo_filosofi(sem_t *forchetta[], int i) { //funzione che viene eseguita solo nel caso in cui viene inserito solo il numero di filosofi valido
   tempo.tv_sec = 1; //definizioni delle componenti della struct tempo (secondi)
-  tempo.tv_nsec = 5; //(nanosecondi)
+  tempo.tv_nsec = 500000000; //(nanosecondi)
 
   while(1) { //ciclo infinito per la continua esecuzione
 
@@ -64,8 +64,6 @@ void mangia_solo_filosofi(sem_t *forchetta[], int i) { //funzione che viene eseg
     sem_wait(forchetta[i]); //il semaforo (forchetta destra) sta aspettando di essere "preso"
     printf("\nIl filosofo %d HA PRESO la forchetta alla sua DESTRA!\n", getpid());
     fflush(stdout); //cancella il buffer di output
-
-    sleep(1); //aiuta l'esecuzione del programma
 
     printf("\nIl filosofo %d STA ASPETTANDO per prendere la forchetta alla sua SINISTRA...", getpid());
     sem_wait(forchetta[i%n_filosofi]); //il semaforo (forchetta sinistra) sta aspettando di essere "preso"
@@ -83,7 +81,7 @@ void mangia_solo_filosofi(sem_t *forchetta[], int i) { //funzione che viene eseg
 
 void mangia_con_stallo(sem_t *forchetta[], int i) { //funzione eseguita solo se ho un numero di filosofi valido e il flag di stallo positiva
   tempo.tv_sec = 1; //definizioni delle componenti della struct tempo (secondi)
-  tempo.tv_nsec = 5;
+  tempo.tv_nsec = 500000000;
 
   while(1) { //ciclo infinito
 
@@ -128,7 +126,7 @@ void mangia_con_stallo(sem_t *forchetta[], int i) { //funzione eseguita solo se 
 
 void mangia_senza_stallo(sem_t *forchetta[], int i) { //funzione usata solo nel caso in cui ho la flag della soluzione allo stallo positive e flag della starvation nulla
   tempo.tv_sec = 1; //definizioni delle componenti della struct tempo (secondi)
-  tempo.tv_nsec = 5; //(nanosecondi)
+  tempo.tv_nsec = 500000000; //(nanosecondi)
 
   while(1) { //ciclo infinito
 
@@ -180,7 +178,7 @@ void mangia_con_starvation(sem_t *forchetta[], int i) { //funzione chiamata in c
   }
 
   struct timespec tempo_starvation; //struct per impostare il tempo della starvation
-  tempo.tv_nsec = 5; //impostazione nanosecondi di d-lay
+  tempo.tv_nsec = 500000000; //impostazione nanosecondi di d-lay
 
   while(1) { //ciclo infinito
     clock_gettime(CLOCK_REALTIME, &tempo_starvation); //associazione a tempo_starvation del "tempo universale" in continuo aumento dal 1° gennaio 1970
@@ -231,7 +229,7 @@ void mangia_stallo_e_starvation(sem_t *forchetta[], int i) {
 
   struct timespec tempo_starvation;
   tempo.tv_sec = 1; //definizioni delle componenti della struct tempo (secondi)
-  tempo.tv_nsec = 5; //(nanosecondi)
+  tempo.tv_nsec = 500000000; //(nanosecondi)
 
   if(i == 1) {
     sinistra = n_filosofi;
