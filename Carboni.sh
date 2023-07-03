@@ -9,7 +9,7 @@ echo "INSERIRE IL FLAG DI SOLUZIONE ALLO STALLO (negativo/nullo --> disattivato,
 read soluzione
 echo "INSERIRE IL FLAG DELLA STARVATION (negativo/nullo --> disattivato, altrimenti attivato):   "
 read starvation
-sleep 5
+sleep 2
 clear
 echo "ESECUZIONE IN CORSO..."
 ./filosofi $filosofi $stallo $soluzione $starvation
