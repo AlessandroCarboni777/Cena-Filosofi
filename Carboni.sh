@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-gcc -o filosofi Carboni.c
+gcc -o filosofi Carboni.c -pthread
 echo "INSERIRE IL NUMERO DI FILOSOFI:   "
 read filosofi
 echo "INSERIRE IL FLAG DELLO STALLO (negativo/nullo --> disattivato, altrimenti attivato):   "
